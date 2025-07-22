@@ -4,6 +4,20 @@ return {
     dependencies = {
       'saghen/blink.cmp',
       {
+        "mason-org/mason.nvim",
+        config = true,
+        opts = {
+          ui = {
+            icons = {
+              package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            }
+          }
+        }
+      },
+      { "williamboman/mason-lspconfig.nvim" },
+      {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
         opts = {
@@ -16,8 +30,30 @@ return {
       },
     },
     config = function()
+      require("mason").setup()
+
+      require("mason-lspconfig").setup({
+        ensure_installed = { "gopls", "lua_ls" },
+        automatic_installation = true,
+      })
+
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require 'lspconfig'.lua_ls.setup { capabilities = capabilities }
+      local lspconfig = require 'lspconfig'
+
+      lspconfig.lua_ls.setup { capabilities = capabilities }
+      lspconfig.gopls.setup {
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      }
+
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
