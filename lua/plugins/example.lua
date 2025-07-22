@@ -2,17 +2,14 @@ return {
   -- the colorscheme should be available when starting Neovim
   {
     "folke/tokyonight.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- load the colorscheme here
       vim.cmd([[colorscheme tokyonight]])
     end,
   },
 
-  -- I have a separate config.mappings file where I require which-key.
-  -- With lazy the plugin will be automatically loaded when it is required somewhere
-  { "folke/which-key.nvim", lazy = true },
+  { "folke/which-key.nvim",        lazy = true },
 
   {
     "nvim-neorg/neorg",
@@ -57,7 +54,7 @@ return {
 
   -- you can use the VeryLazy event for things that can
   -- load later and are not important for the initial UI
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  { "stevearc/dressing.nvim",      event = "VeryLazy" },
 
   {
     "Wansmer/treesj",
@@ -75,13 +72,9 @@ return {
   },
 
   -- local plugins need to be explicitly configured with dir
- -- { dir = "~/projects/secret.nvim" },
+  -- { dir = "~/projects/secret.nvim" },
 
-  -- you can use a custom url to fetch a plugin
   { url = "git@github.com:folke/noice.nvim.git" },
 
-  -- local plugins can also be configured with the dev option.
-  -- This will use {config.dev.path}/noice.nvim/ instead of fetching it from GitHub
-  -- With the dev option, you can easily switch between the local and installed version of a plugin
-  { "folke/noice.nvim", dev = true },
+  { "folke/noice.nvim",                         dev = true },
 }
