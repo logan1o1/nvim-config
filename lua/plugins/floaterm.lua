@@ -9,7 +9,7 @@ local state = {
 
 local function create_floating_window(opts)
   opts         = opts or {}
-  -- calculate height/width (default 60%)
+  -- calculate height/width (default 70%)
   local width  = opts.width or math.floor(vim.o.columns * 0.7)
   local height = opts.height or math.floor(vim.o.lines * 0.7)
 
@@ -27,13 +27,15 @@ local function create_floating_window(opts)
 
   -- window options
   local win_opts = {
-    relative = 'editor',
-    row      = row,
-    col      = col,
-    width    = width,
-    height   = height,
-    style    = 'minimal',
-    border   = 'rounded',
+    relative  = 'editor',
+    row       = row,
+    col       = col,
+    width     = width,
+    height    = height,
+    style     = 'minimal',
+    border    = 'rounded',
+    title     = " Terminal ",
+    title_pos = "center",
     -- noautocmd = true,
   }
 
@@ -45,7 +47,7 @@ end
 
 local toggle_terminal = function()
   if not vim.api.nvim_win_is_valid(state.floating.win) then
-    state.floating = create_floating_window { buf = state.floating.buf }
+    state.floating = create_floating_window { buf = state.floating.buf, title = "─ My Terminal ─", }
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
       vim.cmd.terminal()
     end

@@ -1,21 +1,45 @@
 return {
-  -- the colorscheme should be available when starting Neovim
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
+      vim.opt.termguicolors = true
+
+      require("tokyonight").setup({
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats   = "transparent",
+        }
+      })
+
       vim.cmd([[colorscheme tokyonight]])
     end,
   },
 
-  { "folke/which-key.nvim",        lazy = true },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
 
   {
     "nvim-neorg/neorg",
-    -- lazy-load on filetype
     ft = "norg",
-    -- options for neorg. This will automatically call `require("neorg").setup(opts)`
     opts = {
       load = {
         ["core.defaults"] = {},
@@ -25,9 +49,7 @@ return {
 
   {
     "dstein64/vim-startuptime",
-    -- lazy-load on a command
     cmd = "StartupTime",
-    -- init is called during startup. Configuration for vim plugins typically should be set in an init function
     init = function()
       vim.g.startuptime_tries = 10
     end,
@@ -35,10 +57,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
-    -- load cmp on InsertEnter
     event = "InsertEnter",
-    -- these dependencies will only be loaded when cmp loads
-    -- dependencies are always lazy-loaded unless specified otherwise
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
@@ -48,12 +67,8 @@ return {
     end,
   },
 
-  -- if some code requires a module from an unloaded plugin, it will be automatically loaded.
-  -- So for api plugins like devicons, we can always set lazy=true
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
-  -- you can use the VeryLazy event for things that can
-  -- load later and are not important for the initial UI
   { "stevearc/dressing.nvim",      event = "VeryLazy" },
 
   {
@@ -66,13 +81,8 @@ return {
 
   {
     "monaqa/dial.nvim",
-    -- lazy-load on keys
-    -- mode is `n` by default. For more advanced options, check the section on key mappings
     keys = { "<C-a>", { "<C-x>", mode = "n" } },
   },
-
-  -- local plugins need to be explicitly configured with dir
-  -- { dir = "~/projects/secret.nvim" },
 
   { url = "git@github.com:folke/noice.nvim.git" },
 

@@ -30,17 +30,21 @@ return {
       },
     },
     config = function()
+      local lspconfig = require 'lspconfig'
+
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "gopls", "lua_ls" },
+        ensure_installed = { "gopls", "lua_ls", 'vtsls', 'clangd' },
         automatic_installation = true,
       })
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require 'lspconfig'
+      --     local lspconfig = require 'lspconfig'
 
+      lspconfig.clangd.setup { capabilitie = capabilities }
       lspconfig.lua_ls.setup { capabilities = capabilities }
+      lspconfig.vtsls.setup { capabilities = capabilities }
       lspconfig.gopls.setup {
         capabilities = capabilities,
         settings = {
@@ -51,7 +55,14 @@ return {
             staticcheck = true,
             gofumpt = true,
           },
+          staticcheck = true,
         },
+        flags = {
+          debounce_text_changes = 150,
+        },
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gotmpl" },
+        single_file_support = true,
       }
 
 
