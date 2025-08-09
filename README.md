@@ -6,5 +6,6 @@
 
 ##I just took both of these and combined it
 
-##The skull: https://github.com/goolord/alpha-nvim/discussions/16 
-##the horns: https://github.com/GiorgosXou/our-neovim-setup/blob/main/init.lua
+The skull: https://github.com/goolord/alpha-nvim/discussions/16 
+
+The horns: https://github.com/GiorgosXou/our-neovim-setup/blob/main/init.lua
