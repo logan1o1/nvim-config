@@ -33,6 +33,8 @@ return {
           nontext = "#3B4048",
           white = "#ABB2BF",
           black = "#191A21",
+          navy_blue = "#4b86f2",
+          rust_red = "#f26a4b",
         },
       })
       --vim.cmd [[colorscheme dracula]]
@@ -50,21 +52,45 @@ return {
       local statusline = require 'mini.statusline'
       statusline.setup {
         use_icons = true,
-        content = {
-          -- Content for active window
-          active = nil,
-          -- Content for inactive window(s)
-          inactive = nil,
-        },
       }
 
       local hl = vim.api.nvim_set_hl
       hl(0, "MiniStatuslineNormal", { fg = dracula.black, bg = dracula.purple })
       hl(0, "MiniStatuslineModeInsert", { fg = dracula.black, bg = dracula.red })
-      hl(0, "MiniStatuslineModeVisual", { fg = dracula.black, bg = dracula.cyan })
+      hl(0, "MiniStatuslineModeVisual", { fg = dracula.black, bg = dracula.navy_blue })
       hl(0, "MiniStatuslineModeReplace", { fg = dracula.red, bg = dracula.menu })
       hl(0, "MiniStatuslineModeNormal", { fg = dracula.black, bg = dracula.purple })
-      hl(0, "MiniStatuslineModeCommand", { fg = dracula.black, bg = dracula.bright_blue })
+      hl(0, "MiniStatuslineModeCommand", { fg = dracula.black, bg = dracula.orange })
+
+      hl(0, "MiniStatuslineDevinfo", { fg = dracula.green, bg = dracula.menu })
+      hl(0, "MiniStatuslineFilename", { fg = dracula.cyan, bg = dracula.menu })
+      hl(0, "MiniStatuslineInactive", { fg = dracula.comment, bg = dracula.bg })
+
+      vim.api.nvim_create_autocmd("BufEnter", {
+        callback = function()
+          local filetype = vim.bo.filetype
+
+          if filetype == "lua" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+          elseif filetype == "javascript" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.yellow, bg = dracula.menu })
+          elseif filetype == "go" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.cyan, bg = dracula.menu })
+          elseif filetype == "typescriptreact" or filetype == "javascriptreact" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+          elseif filetype == "c" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+          elseif filetype == "sh" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.green, bg = dracula.menu })
+          elseif filetype == "rust" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.rust_red, bg = dracula.menu })
+          elseif filetype == "json" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.orange, bg = dracula.menu })
+          else
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.white, bg = dracula.menu })
+          end
+        end,
+      })
     end
   }
 }
