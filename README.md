@@ -4,6 +4,7 @@
 
 ##Thank you fr viewing it, drop a star if you like it
 
-I just took both of these and combined it
-The skull: https://github.com/goolord/alpha-nvim/discussions/16
-the horns: https://github.com/GiorgosXou/our-neovim-setup/blob/main/init.lua
+##I just took both of these and combined it
+
+##The skull: https://github.com/goolord/alpha-nvim/discussions/16 
+##the horns: https://github.com/GiorgosXou/our-neovim-setup/blob/main/init.lua
