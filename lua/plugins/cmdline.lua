@@ -9,10 +9,10 @@ local function create_floating_window(opts)
   opts         = opts or {}
 
   local width  = opts.width or math.floor(vim.o.columns * 0.8)
-  local height = opts.hight or math.floor(vim.o.lines * 0.2)
+  local height = opts.hight or math.floor(vim.o.lines * 0.03)
 
-  local col    = math.floor((vim.o.columns - width) / 3)
-  local row    = math.floor((vim.o.lines - height) / 2)
+  local col    = math.floor((vim.o.columns - width) / 2)
+  local row    = math.floor((vim.o.lines - height) / 5)
 
   local buf    = nil
   if opts.buf and vim.api.nvim_buf_is_valid(opts.buf) then
@@ -42,13 +42,12 @@ local toggle_cmd = function()
   if not vim.api.nvim_win_is_valid(state.floating.win) then
     state.floating = create_floating_window { buf = state.floating.buf, title = "─ CMD Line ─", }
     if vim.bo[state.floating.buf].buftype ~= "cmdline" then
-      --
+      vim.cmd('normal! q:')
     end
   else
     vim.api.nvim_win_hide(state.floating.win)
   end
 end
 
---vim.api.nvim_create_autocmd("Floatcmd", toggle_cmd, {})
-
+vim.api.nvim_create_user_command("Floatcmd", toggle_cmd, {})
 return {}

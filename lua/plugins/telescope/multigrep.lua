@@ -46,7 +46,7 @@ local live_multigrep = function(opts)
 end
 
 M.setup = function()
-  vim.keymap.set("n", "<C-m>", live_multigrep)
+  vim.keymap.set("n", "<leader>m", live_multigrep)
 end
 
 -- live_multigrep()

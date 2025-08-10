@@ -17,7 +17,7 @@ return {
           orange = "#FFB86C",
           yellow = "#F1FA8C",
           green = "#50fa7b",
-          purple = "#BD93F9",
+          purple = "#a769e2",
           cyan = "#8BE9FD",
           pink = "#FF79C6",
           bright_red = "#FF6E6E",
@@ -27,7 +27,7 @@ return {
           bright_magenta = "#FF92DF",
           bright_cyan = "#A4FFFF",
           bright_white = "#FFFFFF",
-          menu = "#21222C",
+          menu = "#1b1b26",
           visual = "#3E4452",
           gutter_fg = "#4B5263",
           nontext = "#3B4048",
@@ -86,6 +86,8 @@ return {
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.rust_red, bg = dracula.menu })
           elseif filetype == "json" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.orange, bg = dracula.menu })
+          elseif filetype == "query" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.green, bg = dracula.menu })
           else
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.white, bg = dracula.menu })
           end

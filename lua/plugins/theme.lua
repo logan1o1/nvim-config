@@ -79,12 +79,11 @@ return {
     opts = { use_default_keymaps = false, max_join_length = 150 },
   },
 
-  {
+  --[[{
     "monaqa/dial.nvim",
     keys = { "<C-a>", { "<C-x>", mode = "n" } },
-  },
+  },]]
 
-  { url = "git@github.com:folke/noice.nvim.git" },
-
-  { "folke/noice.nvim",                         dev = true },
+  --{ url = "git@github.com:folke/noice.nvim.git" },
+  --{ "folke/noice.nvim",                         dev = true },
 }
