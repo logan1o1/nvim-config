@@ -35,17 +35,21 @@ return {
           black = "#191A21",
           navy_blue = "#4b86f2",
           rust_red = "#f26a4b",
+          icon_blue = "#7ac9f7",
+          go_blue = "#2bc8fc",
         },
       })
       --vim.cmd [[colorscheme dracula]]
     end,
   },
-
   {
     'echasnovski/mini.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons'
+    },
     config = function()
       local dracula = require("dracula").colors()
-      local icons = require 'mini.icons'
+      local icons = require 'nvim-web-devicons'
       icons.setup {
         style = 'glyph',
       }
@@ -71,13 +75,15 @@ return {
           local filetype = vim.bo.filetype
 
           if filetype == "lua" then
-            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.icon_blue, bg = dracula.menu })
           elseif filetype == "javascript" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.yellow, bg = dracula.menu })
           elseif filetype == "go" then
-            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.cyan, bg = dracula.menu })
-          elseif filetype == "typescriptreact" or filetype == "javascriptreact" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.go_blue, bg = dracula.menu })
+          elseif filetype == "typescriptreact" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+          elseif filetype == "javascriptreact" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.go_blue, bg = dracula.menu })
           elseif filetype == "c" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
           elseif filetype == "sh" then
@@ -85,7 +91,7 @@ return {
           elseif filetype == "rust" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.rust_red, bg = dracula.menu })
           elseif filetype == "json" then
-            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.orange, bg = dracula.menu })
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.yellow, bg = dracula.menu })
           elseif filetype == "query" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.green, bg = dracula.menu })
           else

@@ -42,7 +42,7 @@ local toggle_cmd = function()
   if not vim.api.nvim_win_is_valid(state.floating.win) then
     state.floating = create_floating_window { buf = state.floating.buf, title = "─ CMD Line ─", }
     if vim.bo[state.floating.buf].buftype ~= "cmdline" then
-      vim.cmd('normal! q:')
+      vim.cmd()
     end
   else
     vim.api.nvim_win_hide(state.floating.win)

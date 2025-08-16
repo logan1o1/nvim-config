@@ -7,10 +7,9 @@
       "jay-babu/mason-nvim-dap.nvim",
       "theHamsta/nvim-dap-virtual-text",
     },
-    config = function ()
+    config = function()
 
     end
   },
-}
-]]
+}]]
 return {}

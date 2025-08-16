@@ -2,12 +2,14 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
-    -- or                              , branch = '0.1.x',
     dependencies = {
+      'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-media-files.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
     config = function()
+      require('telescope').load_extension('media_files')
       require('telescope').setup {
         pickers = {
           find_files = {
@@ -15,7 +17,14 @@ return {
           }
         },
         extensions = {
-          fzf = {}
+          fzf = {},
+          media_files = {
+            -- filetypes whitelist
+            -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+            filetypes = { "png", "webp", "jpg", "jpeg" },
+            -- find command (defaults to `fd`)
+            find_cmd = "rg"
+          },
         }
       }
       vim.keymap.set("n", "<C-h>", require('telescope.builtin').help_tags)

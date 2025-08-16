@@ -11,16 +11,18 @@ require 'cmp'.setup {
   },
 }
 
+vim.lsp.set_log_level("off")
+
 vim.opt.clipboard = "unnamedplus"
 
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
+vim.keymap.set("n", "<Leader><Leader>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<Leader>x", ":.lua<CR>")
+vim.keymap.set("v", "<Leader>x", ":lua<CR>")
 
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
-vim.keymap.set('n', '<space>d', vim.diagnostic.open_float)
+vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<C-t>", function()
   vim.cmd.vnew()
@@ -41,20 +43,6 @@ map("n", "<S-L>", "<Plug>(cokeline-focus-next)", { silent = true })
 map("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
 map("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
 
---[[for i = 1, 9 do
-  map(
-    "n",
-    ("<C-%s>"):format(i),
-    ("<Plug>(cokeline-focus-%s)"):format(i),
-    { silent = true }
-  )
-  map(
-    "n",
-    ("<Leader>%s"):format(i),
-    ("<Plug>(cokeline-switch-%s)"):format(i),
-    { silent = true }
-  )
-end]]
-
-
---[[vim.api.nvim_set_option("clipboard", "unnamed")]]
+vim.keymap.set("n", "<S-Q>", function()
+  require('cokeline.mappings').pick("close")
+end, { desc = "Pick a buffer to close" })

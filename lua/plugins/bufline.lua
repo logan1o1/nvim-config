@@ -29,6 +29,10 @@ return {
         },
 
         --fill_hl = "TabLineFill",
+        pick = {
+          use_filename = true,
+          letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERTYQP',
+        },
 
         components = {
           {

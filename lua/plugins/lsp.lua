@@ -2,6 +2,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      --'hrsh7th/nvim-cmp',
+      --"hrsh7th/cmp-nvim-lsp",
       'saghen/blink.cmp',
       {
         "mason-org/mason.nvim",
@@ -29,20 +31,20 @@ return {
     },
     config = function()
       local lspconfig = require 'lspconfig'
+      --local configs = require('lspconfig/configs')
 
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "gopls", "lua_ls", 'vtsls', 'clangd' },
+        ensure_installed = { "gopls", "lua_ls", 'ts_ls', 'clangd', 'emmet_language_server' },
         automatic_installation = true,
       })
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      --     local lspconfig = require 'lspconfig'
 
       lspconfig.clangd.setup { capabilitie = capabilities }
       lspconfig.lua_ls.setup { capabilities = capabilities }
-      lspconfig.vtsls.setup { capabilities = capabilities }
+      lspconfig.ts_ls.setup { capabilities = capabilities }
       lspconfig.gopls.setup {
         capabilities = capabilities,
         settings = {
@@ -62,7 +64,20 @@ return {
         filetypes = { "go", "gomod", "gotmpl" },
         single_file_support = true,
       }
-
+      lspconfig.emmet_language_server.setup({
+        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+        init_options = {
+          includeLanguages = {},
+          excludeLanguages = {},
+          extensionsPath = {},
+          preferences = {},
+          showAbbreviationSuggestions = true,
+          showExpandedAbbreviation = "always",
+          showSuggestionsAsSnippets = false,
+          syntaxProfiles = {},
+          variables = {},
+        },
+      })
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),
