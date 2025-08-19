@@ -94,6 +94,8 @@ return {
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.yellow, bg = dracula.menu })
           elseif filetype == "query" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.green, bg = dracula.menu })
+          elseif filetype == "prisma" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
           else
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.white, bg = dracula.menu })
           end
