@@ -1,4 +1,3 @@
--- lua/custom/plugins/mini.lua
 return {
   {
     "Mofiqul/dracula.nvim",
@@ -13,14 +12,19 @@ return {
           fg = "#F8F8F2",
           selection = "#44475A",
           comment = "#6272A4",
+          tk_blue = "#77aaff",
+          light_blue = "#99ccff",
+          true_cyan = "#00ffd2",
           red = "#FF5555",
-          orange = "#FFB86C",
+          orange = "#ff9e64",
           yellow = "#F1FA8C",
           green = "#50fa7b",
-          purple = "#a769e2",
+          purple = "#bf8bff",
+          prisma_blue = "#0a0047",
+          deep_purple = "#4B006E",
           cyan = "#8BE9FD",
           pink = "#FF79C6",
-          bright_red = "#FF6E6E",
+          bright_red = "#f54e07",
           bright_green = "#69FF94",
           bright_yellow = "#FFFFA5",
           bright_blue = "#D6ACFF",
@@ -32,8 +36,6 @@ return {
           gutter_fg = "#4B5263",
           nontext = "#3B4048",
           white = "#ABB2BF",
-          black = "#191A21",
-          navy_blue = "#4b86f2",
           rust_red = "#f26a4b",
           icon_blue = "#7ac9f7",
           go_blue = "#2bc8fc",
@@ -61,13 +63,13 @@ return {
       local hl = vim.api.nvim_set_hl
       hl(0, "MiniStatuslineNormal", { fg = dracula.black, bg = dracula.purple })
       hl(0, "MiniStatuslineModeInsert", { fg = dracula.black, bg = dracula.red })
-      hl(0, "MiniStatuslineModeVisual", { fg = dracula.black, bg = dracula.navy_blue })
+      hl(0, "MiniStatuslineModeVisual", { fg = dracula.black, bg = dracula.true_cyan })
       hl(0, "MiniStatuslineModeReplace", { fg = dracula.red, bg = dracula.menu })
-      hl(0, "MiniStatuslineModeNormal", { fg = dracula.black, bg = dracula.purple })
+      hl(0, "MiniStatuslineModeNormal", { fg = dracula.black, bg = dracula.tk_blue })
       hl(0, "MiniStatuslineModeCommand", { fg = dracula.black, bg = dracula.orange })
 
-      hl(0, "MiniStatuslineDevinfo", { fg = dracula.green, bg = dracula.menu })
-      hl(0, "MiniStatuslineFilename", { fg = dracula.cyan, bg = dracula.menu })
+      hl(0, "MiniStatuslineDevinfo", { fg = dracula.bright_red, bg = dracula.menu })
+      hl(0, "MiniStatuslineFilename", { fg = dracula.light_blue, bg = dracula.menu })
       hl(0, "MiniStatuslineInactive", { fg = dracula.comment, bg = dracula.bg })
 
       vim.api.nvim_create_autocmd("BufEnter", {
@@ -78,6 +80,8 @@ return {
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.icon_blue, bg = dracula.menu })
           elseif filetype == "javascript" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.yellow, bg = dracula.menu })
+          elseif filetype == "typescript" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.cyan, bg = dracula.menu })
           elseif filetype == "go" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.go_blue, bg = dracula.menu })
           elseif filetype == "typescriptreact" then
@@ -96,6 +100,16 @@ return {
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.green, bg = dracula.menu })
           elseif filetype == "prisma" then
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.navy_blue, bg = dracula.menu })
+          elseif filetype == "ruby" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.red, bg = dracula.menu })
+          elseif filetype == "eruby" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.red, bg = dracula.menu })
+          elseif filetype == "gitignore" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.red, bg = dracula.menu })
+          elseif filetype == "yaml" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.bright_magenta, bg = dracula.menu })
+          elseif filetype == "css" then
+            vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.deep_purple, bg = dracula.menu })
           else
             vim.api.nvim_set_hl(0, "MiniStatuslineFileinfo", { fg = dracula.white, bg = dracula.menu })
           end

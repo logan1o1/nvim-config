@@ -36,7 +36,7 @@ return {
       require("mason").setup()
 
       require("mason-lspconfig").setup({
-        ensure_installed = { "gopls", "lua_ls", 'vtsls', 'clangd', 'emmet_language_server' },
+        ensure_installed = { "gopls", "lua_ls", 'vtsls', 'clangd', 'emmet_language_server', "tailwindcss" },
         automatic_installation = true,
       })
 
@@ -45,6 +45,7 @@ return {
       lspconfig.clangd.setup { capabilitie = capabilities }
       lspconfig.lua_ls.setup { capabilities = capabilities }
       lspconfig.vtsls.setup { capabilities = capabilities }
+      lspconfig.tailwindcss.setup { capabilities = capabilities }
       lspconfig.gopls.setup {
         capabilities = capabilities,
         settings = {
@@ -78,6 +79,7 @@ return {
           variables = {},
         },
       })
+      lspconfig.ruby_lsp.setup { capabilities = capabilities }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('my.lsp', {}),

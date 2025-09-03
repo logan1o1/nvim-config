@@ -4,7 +4,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require 'nvim-treesitter.configs'.setup {
-        ensure_installed = { "c", "go", "javascript", "typescript", "tsx", "json", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "html", "latex", "norg", "scss", "svelte", "typst", "vue" },
+        ensure_installed = { "c", "go", "javascript", "typescript", "tsx", "json", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "html", "latex", "norg", "scss", "svelte", "typst", "vue", },
 
         modules = {},
         ignore_install = {},
