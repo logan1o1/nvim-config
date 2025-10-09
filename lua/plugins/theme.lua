@@ -34,15 +34,15 @@ return {
     },
   },
 
-  {
-    "nvim-neorg/neorg",
-    ft = "norg",
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-      },
-    },
-  },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   ft = "norg",
+  --   opts = {
+  --     load = {
+  --       ["core.defaults"] = {},
+  --     },
+  --   },
+  -- },
 
   {
     "dstein64/vim-startuptime",
