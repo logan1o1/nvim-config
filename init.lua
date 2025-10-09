@@ -11,6 +11,8 @@ require 'cmp'.setup {
   },
 }
 
+vim.keymap.set("i", "<C-j>", "<CR>")
+
 vim.lsp.set_log_level("off")
 
 vim.opt.clipboard = "unnamedplus"
@@ -22,7 +24,7 @@ vim.keymap.set("v", "<Leader>x", ":lua<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
-vim.keymap.set("n", "<C-o>", ":Oil<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-o>", ":Oil --float<CR>", { noremap = true, silent = true })
 
 vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float)
 
