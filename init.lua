@@ -1,15 +1,10 @@
-vim.opt.expandtab   = true
-vim.opt.shiftwidth  = 2
-vim.opt.tabstop     = 2
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 
 require("config.lazy")
-
-require 'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp_signature_help' }
-  },
-}
+require("config.lsp")
 
 vim.keymap.set("i", "<C-j>", "<CR>")
 
@@ -26,7 +21,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
 vim.keymap.set("n", "<C-o>", ":Oil --float<CR>", { noremap = true, silent = true })
 
-vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float)
+vim.keymap.set("n", "<Leader>d", vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<C-t>", function()
   vim.cmd.vnew()
@@ -48,5 +43,5 @@ map("n", "<Leader>p", "<Plug>(cokeline-switch-prev)", { silent = true })
 map("n", "<Leader>n", "<Plug>(cokeline-switch-next)", { silent = true })
 
 vim.keymap.set("n", "<S-Q>", function()
-  require('cokeline.mappings').pick("close")
+  require("cokeline.mappings").pick("close")
 end, { desc = "Pick a buffer to close" })

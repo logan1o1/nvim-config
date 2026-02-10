@@ -1,12 +1,14 @@
 return {
   {
-    'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
-    version = '1.*',
+    "saghen/blink.cmp",
+    dependencies = {
+      { "rafamadriz/friendly-snippets" },
+    },
+    version = "1.*",
 
     opts = {
       keymap = {
-        preset = 'default',
+        preset = "default",
 
         -- ["<Tab>"] = { "accept", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback" },
@@ -14,7 +16,7 @@ return {
       },
 
       appearance = {
-        nerd_font_variant = 'mono'
+        nerd_font_variant = "mono",
       },
 
       completion = { documentation = { auto_show = false } },
@@ -28,10 +30,10 @@ return {
               -- or (recommended) filter to only "normal" buffers
               get_bufnrs = function()
                 return vim.tbl_filter(function(bufnr)
-                  return vim.bo[bufnr].buftype == ''
+                  return vim.bo[bufnr].buftype == ""
                 end, vim.api.nvim_list_bufs())
-              end
-            }
+              end,
+            },
           },
           path = {
             opts = {
@@ -40,12 +42,14 @@ return {
               end,
             },
           },
-        }
+        },
       },
 
       signature = { enabled = true },
 
-      fuzzy = { implementation = "prefer_rust_with_warning" }
+      fuzzy = { implementation = "prefer_rust_with_warning" },
     },
-  }
+  },
+  { "antosha417/nvim-lsp-file-operations", config = true },
+  { "folke/lazydev.nvim", opts = {} },
 }

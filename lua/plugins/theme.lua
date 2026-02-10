@@ -7,10 +7,10 @@ return {
       vim.opt.termguicolors = true
 
       require("tokyonight").setup({
-        transparent = true,
+        transparent = false,
         styles = {
-          sidebars = "transparent",
-          floats   = "transparent",
+          sidebars = "opaque",
+          floats   = "opaque",
         }
       })
 
