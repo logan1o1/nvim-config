@@ -1,86 +1,49 @@
 return {
   {
-    "willothy/nvim-cokeline",
+    "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
+      { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+      { "<leader>ch", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
+      { "<leader>cl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
+      { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+      { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+      { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+      { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+      { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+      { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
     },
     config = function()
-      require("cokeline").setup({
-        show_if_buffers_are_at_least = 1,
+      vim.opt.termguicolors = true
+      local bufferline = require("bufferline")
+      bufferline.setup({
+        options = {
+          max_name_length = 18,
+          max_prefix_length = 15,
+          truncate_names = true,
+          tab_size = 18,
 
-        buffers = {
-          filter_valid = false,
-          filter_visible = false,
-          focus_on_delete = "next",
-          new_buffers_position = "last",
-          delete_on_right_click = true,
-        },
-
-        default_hl = {
-          fg = function(buffer)
-            return buffer.is_focused and "#cdd6f4" or "#8794c7"
+          diagnostics = "nvim_lsp",
+          diagnostics_indicator = function(count, level)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
           end,
-          bg = "NONE",
-        },
 
-        --fill_hl = "TabLineFill",
-        pick = {
-          use_filename = true,
-          letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERTYQP",
-        },
-
-        components = {
-          {
-            text = "❙",
-            fg = "#a769e2",
+          separator_style = "slope",
+          indicator = {
+            style = "underline",
           },
-          {
-            text = function(buffer)
-              return " " .. buffer.devicon.icon
-            end,
-            fg = function(buffer)
-              return buffer.devicon.color
-            end,
+          style_preset = {
+            bufferline.style_preset.no_italic,
+            bufferline.style_preset.no_bold,
           },
-          {
-            text = " ",
-          },
-          {
-            text = function(buffer)
-              return buffer.filename .. " "
-            end,
-            bold = function(buffer)
-              return buffer.is_focused
-            end,
-            fg = function(buffer)
-              if buffer.is_focused then
-                return buffer.devicon.color
-              end
-            end,
-          },
-          {
-            text = function(buffer)
-              if buffer.is_modified then
-                return ""
-              end
-              if buffer.is_hovered then
-                return "󰅙"
-              end
-              return "󰅖"
-            end,
-            fg = function(buffer)
-              if buffer.is_focused then
-                return buffer.devicon.color
-              end
-            end,
-            on_click = function(_, _, _, _, buffer)
-              buffer:delete()
-            end,
-          },
-          {
-            text = " ",
+          hover = {
+            enabled = true,
+            delay = 200,
+            reveal = { "close" },
           },
         },
       })

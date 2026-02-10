@@ -10,8 +10,8 @@ return {
         transparent = false,
         styles = {
           sidebars = "opaque",
-          floats   = "opaque",
-        }
+          floats = "opaque",
+        },
       })
 
       vim.cmd([[colorscheme tokyonight]])
@@ -21,8 +21,7 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts = {
-    },
+    opts = {},
     keys = {
       {
         "<leader>?",
@@ -66,7 +65,7 @@ return {
 
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
-  { "stevearc/dressing.nvim",      event = "VeryLazy" },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
 
   {
     "Wansmer/treesj",
