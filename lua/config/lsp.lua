@@ -15,6 +15,7 @@ local lsp_array = {
   "vimls",
   "tailwindcss",
   "tree-sitter-cli",
+  "jsonls",
 }
 
 for _, v in ipairs(lsp_array) do

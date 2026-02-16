@@ -9,8 +9,8 @@ return {
       require("tokyonight").setup({
         transparent = false,
         styles = {
-          sidebars = "opaque",
-          floats = "opaque",
+          sidebars = "transparent",
+          floats = "transparent",
         },
       })
 
