@@ -21,10 +21,14 @@ return {
       local bufferline = require("bufferline")
       bufferline.setup({
         options = {
+          mode = "buffers",
           max_name_length = 18,
           max_prefix_length = 15,
           truncate_names = true,
           tab_size = 18,
+          -- always_show_bufferline = function()
+          --   return vim.bo.filetype ~= ""
+          -- end,
 
           diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level)
@@ -32,13 +36,9 @@ return {
             return " " .. icon .. count
           end,
 
-          separator_style = "slope",
+          separator_style = "thin",
           indicator = {
             style = "underline",
-          },
-          style_preset = {
-            bufferline.style_preset.no_italic,
-            bufferline.style_preset.no_bold,
           },
           hover = {
             enabled = true,
