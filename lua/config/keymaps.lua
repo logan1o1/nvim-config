@@ -12,6 +12,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
 vim.keymap.set("n", "<C-o>", ":Oil --float<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>r", ":bd!<CR>")
 
 vim.keymap.set("n", "<Leader>d", vim.diagnostic.open_float)
 

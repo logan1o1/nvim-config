@@ -20,6 +20,7 @@ return {
         "eslint",
         "emmet_ls",
         "prismals",
+        "qmlls",
       },
     },
     dependencies = {
