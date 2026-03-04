@@ -1,6 +1,6 @@
 return {
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
@@ -122,7 +122,7 @@ return {
         update_on_cursor_moved = true,
         preview_method = "fast_scratch",
         disable_preview = function(filename)
-          return false
+          return true
         end,
         win_options = {},
       },
@@ -159,10 +159,9 @@ return {
       keymaps_help = {
         border = "rounded",
       },
-
     },
     -- Optional dependencies
     dependencies = { { "nvim-mini/mini.icons", opts = {} } },
     lazy = false,
-  }
+  },
 }

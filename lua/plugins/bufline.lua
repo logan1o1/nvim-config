@@ -26,9 +26,7 @@ return {
           max_prefix_length = 15,
           truncate_names = true,
           tab_size = 18,
-          -- always_show_bufferline = function()
-          --   return vim.bo.filetype ~= ""
-          -- end,
+          always_show_bufferline = true,
 
           diagnostics = "nvim_lsp",
           diagnostics_indicator = function(count, level)
@@ -44,6 +42,11 @@ return {
             enabled = true,
             delay = 200,
             reveal = { "close" },
+          },
+        },
+        highlights = {
+          fill = {
+            bg = "#222436",
           },
         },
       })
