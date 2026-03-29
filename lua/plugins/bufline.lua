@@ -46,7 +46,11 @@ return {
         },
         highlights = {
           fill = {
-            bg = "#222436",
+            -- bg = "#222436", -- tokyonight
+            bg = "#282828", -- gruvbox
+            -- bg = "#0c1014", -- neogotham
+            -- bg = "#232A36", -- dracula
+            -- bg = "#121212", -- ashen
           },
         },
       })

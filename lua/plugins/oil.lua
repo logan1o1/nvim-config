@@ -44,7 +44,7 @@ return {
         ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
         ["<C-t>"] = { "actions.select", opts = { tab = true } },
         ["<C-p>"] = "actions.preview",
-        ["<C-w>"] = { "actions.close", mode = "n" },
+        ["<Leader>w"] = { "actions.close", mode = "n" },
         ["<C-l>"] = "actions.refresh",
         ["<C-b>"] = { "actions.parent", mode = "n" },
         -- ["<S-L>"] = "actions.toggle_subdirectories.select",

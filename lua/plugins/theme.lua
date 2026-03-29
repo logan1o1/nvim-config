@@ -1,22 +1,77 @@
 return {
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.opt.termguicolors = true
+  --
+  --     require("tokyonight").setup({
+  --       transparent = false,
+  --       styles = {
+  --         sidebars = "transparent",
+  --         floats = "transparent",
+  --       },
+  --     })
+  --
+  --     vim.cmd([[colorscheme tokyonight]])
+  --   end,
+  -- },
+  --
+
+  -- {
+  --   "https://gitlab.com/shmerl/neogotham.git",
+  --   lazy = false, -- to make sure it's loaded on startup
+  --   priority = 1000, -- to load before other plugins
+  --   config = function()
+  --     vim.cmd.colorscheme("neogotham")
+  --   end,
+  -- },
+
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
-      vim.opt.termguicolors = true
-
-      require("tokyonight").setup({
-        transparent = false,
-        styles = {
-          sidebars = "transparent",
-          floats = "transparent",
+      require("gruvbox").setup({
+        terminal_colors = true,
+        undercurl = true,
+        underline = true,
+        bold = true,
+        italic = {
+          strings = true,
+          emphasis = true,
+          comments = true,
+          operators = false,
+          folds = true,
         },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        transparent_mode = false,
       })
-
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd("colorscheme gruvbox")
     end,
   },
+
+  -- {
+  --   "Mofiqul/dracula.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("dracula")
+  --   end,
+  -- },
+
+  -- {
+  --   "ficcdaf/ashen.nvim",
+  --   tag = "*",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme("ashen")
+  --   end,
+  -- },
 
   {
     "folke/which-key.nvim",
