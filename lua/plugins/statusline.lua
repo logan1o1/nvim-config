@@ -6,8 +6,9 @@ return {
       require("lualine").setup({
         options = {
           icons_enabled = true,
+          theme = vim.g.theme,
           -- theme = "tokyonight",
-          theme = "gruvbox",
+          -- theme = "gruvbox",
           -- theme = "neogotham",
           -- theme = "dracula",
           -- theme = "ashen",

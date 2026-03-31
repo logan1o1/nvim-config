@@ -19,6 +19,15 @@ return {
     config = function()
       vim.opt.termguicolors = true
       local bufferline = require("bufferline")
+
+      local theme_bg = {
+        gruvbox = "#282828",
+        tokyonight = "#222436",
+        neogotham = "#0c1014",
+        dracula = "#282A36",
+        ashen = "#121212",
+      }
+
       bufferline.setup({
         options = {
           mode = "buffers",
@@ -46,8 +55,9 @@ return {
         },
         highlights = {
           fill = {
+            bg = theme_bg[vim.g.theme],
             -- bg = "#222436", -- tokyonight
-            bg = "#282828", -- gruvbox
+            -- bg = "#282828", -- gruvbox
             -- bg = "#0c1014", -- neogotham
             -- bg = "#232A36", -- dracula
             -- bg = "#121212", -- ashen
