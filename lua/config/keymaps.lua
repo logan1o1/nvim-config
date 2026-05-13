@@ -1,7 +1,5 @@
 vim.keymap.set("i", "<C-j>", "<CR>")
 
-vim.lsp.set_log_level("off")
-
 vim.opt.clipboard = "unnamedplus"
 
 vim.keymap.set("n", "<Leader><Leader>x", "<cmd>source %<CR>")
@@ -26,4 +24,4 @@ end)
 vim.keymap.set("n", "<C-c>", ":w<CR>:!gcc % -o %< && ./%< <CR>")
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
