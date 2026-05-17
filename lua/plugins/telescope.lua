@@ -26,9 +26,9 @@ return {
           },
         },
       })
-      vim.keymap.set("n", "<C-h>", require("telescope.builtin").help_tags)
-      vim.keymap.set("n", "<C-l>", require("telescope.builtin").find_files)
-      vim.keymap.set("n", "<C-p>", function()
+      vim.keymap.set("n", "fh", require("telescope.builtin").help_tags)
+      vim.keymap.set("n", "ff", require("telescope.builtin").find_files)
+      vim.keymap.set("n", "fp", function()
         require("telescope.builtin").find_files({
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
         })
