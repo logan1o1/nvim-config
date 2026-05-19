@@ -13,7 +13,7 @@ return {
       require("telescope").setup({
         pickers = {
           find_files = {
-            theme = "dropdown",
+            theme = "dropdown", -- cursor, ivy, dropdown
           },
         },
         extensions = {
@@ -27,6 +27,8 @@ return {
         },
       })
       vim.keymap.set("n", "fh", require("telescope.builtin").help_tags)
+      vim.keymap.set("n", "fl", require("telescope.builtin").live_grep)
+      vim.keymap.set("n", "fg", require("telescope.builtin").grep_string)
       vim.keymap.set("n", "ff", require("telescope.builtin").find_files)
       vim.keymap.set("n", "fp", function()
         require("telescope.builtin").find_files({
