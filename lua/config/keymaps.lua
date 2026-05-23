@@ -1,7 +1,5 @@
 vim.keymap.set("i", "<C-j>", "<CR>")
 
-vim.opt.clipboard = "unnamedplus"
-
 vim.keymap.set("n", "<Leader><Leader>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<Leader>x", ":.lua<CR>")
 vim.keymap.set("v", "<Leader>x", ":lua<CR>")
@@ -12,7 +10,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<C-o>", ":Oil --float<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>r", ":bd!<CR>")
 
-vim.keymap.set("n", "<Leader>d", vim.diagnostic.open_float)
+vim.keymap.set("n", "<M-d>", vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<C-t>", function()
   vim.cmd.vnew()
@@ -22,6 +20,3 @@ vim.keymap.set("n", "<C-t>", function()
 end)
 
 vim.keymap.set("n", "<C-c>", ":w<CR>:!gcc % -o %< && ./%< <CR>")
-
-vim.opt.number = true
-vim.opt.relativenumber = true
