@@ -17,8 +17,8 @@ return {
         defaults = {
           mappings = {
             i = {
-              ["<M-k>"] = actions.results_scrolling_up,
-              ["<M-j>"] = actions.results_scrolling_down,
+              ["<A-k>"] = actions.results_scrolling_up,
+              ["<A-j>"] = actions.results_scrolling_down,
               ["<M-u>"] = actions.preview_scrolling_up,
               ["<M-n>"] = actions.preview_scrolling_down,
             },
