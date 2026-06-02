@@ -9,7 +9,6 @@ return {
         "clangd",
         "rubocop",
         "ts_ls",
-        "cssls",
         "dockerls",
         "html",
         "postgres_lsp",

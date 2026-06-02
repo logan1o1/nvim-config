@@ -48,14 +48,68 @@ return {
   },
 
   {
-    "Mofiqul/dracula.nvim",
+    "ficcdaf/ashen.nvim",
     lazy = false,
     priority = 1000,
   },
 
   {
-    "ficcdaf/ashen.nvim",
+    "water-sucks/darkrose.nvim",
     lazy = false,
     priority = 1000,
   },
+
+  {
+    'uhs-robert/oasis.nvim',
+    version = '4.2.0',
+    config = function()
+      require('oasis').setup({
+        style = "lagoon",
+      })
+    end,
+  },
+
+  {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha" -- latte, frappe, macchiato, mocha
+      })
+    end
+  },
+
+  {
+    "DeviusVim/deviuspro.nvim",
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'deviuspro'
+        }
+      }
+    end
+  },
+
+  {
+    "Shatur/neovim-ayu",
+    config = function()
+      require('ayu').setup({
+        dark = true,
+        terminal = true,
+      })
+    end
+  }
 }

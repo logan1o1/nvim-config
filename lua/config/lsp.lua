@@ -5,7 +5,6 @@ local lsp_array = {
   "clangd",
   "rubocop",
   "ts_ls",
-  "cssls",
   "docker_compose_language_server",
   "dockerls",
   "html",
