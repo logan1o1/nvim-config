@@ -5,6 +5,6 @@ require("config.options")
 require("config.keymaps")
 
 vim.g.theme = "catppuccin"
--- ayu, tokyonight, gruvbox, neogotham, ashen, darkrose, miasma, catppuccin, nordic, oasis, deviuspro
+-- ayu, rose-pine, tokyonight, gruvbox, neogotham, ashen, darkrose, miasma, catppuccin, nordic, oasis, deviuspro
 
 vim.cmd.colorscheme(vim.g.theme)

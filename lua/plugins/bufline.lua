@@ -30,7 +30,9 @@ return {
         oasis = "#101825",
         nordic = "#242933",
         deviuspro = "#15181A",
-        ayu = "#0D0E15"
+        ayu = "#0D0E15",
+        miasma = "#222222",
+        ["rose-pine"] = "#191724",
       }
 
       bufferline.setup({
