@@ -17,8 +17,8 @@ return {
         defaults = {
           mappings = {
             i = {
-              ["<A-k>"] = actions.results_scrolling_up,
-              ["<A-j>"] = actions.results_scrolling_down,
+              ["<C-k>"] = actions.results_scrolling_up,
+              ["<C-j>"] = actions.results_scrolling_down,
               ["<M-u>"] = actions.preview_scrolling_up,
               ["<M-n>"] = actions.preview_scrolling_down,
             },
@@ -42,13 +42,16 @@ return {
       vim.keymap.set("n", "fh", builtin.help_tags)
       vim.keymap.set("n", "fl", builtin.live_grep)
       vim.keymap.set("n", "fg", builtin.grep_string)
+      vim.keymap.set("n", "fo", builtin.oldfiles)
+      vim.keymap.set("n", "fn", builtin.man_pages)
       vim.keymap.set("n", "ff", builtin.find_files)
-      vim.keymap.set("n", "fp", function()
-        require("telescope.builtin").find_files({
-          cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
-        })
-      end)
       require("plugins.telescope.multigrep").setup()
     end,
   },
 }
+
+-- vim.keymap.set("n", "fp", function()
+--   require("telescope.builtin").find_files({
+--     cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+--   })
+-- end)

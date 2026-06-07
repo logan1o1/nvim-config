@@ -4,7 +4,7 @@ require("config.lsp")
 require("config.options")
 require("config.keymaps")
 
-vim.g.theme = "catppuccin"
+vim.g.theme = "tokyonight"
 -- ayu, rose-pine, tokyonight, gruvbox, neogotham, ashen, darkrose, miasma, catppuccin, nordic, oasis, deviuspro
 
 vim.cmd.colorscheme(vim.g.theme)
