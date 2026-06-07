@@ -24,6 +24,7 @@ return {
 
   {
     "ellisonleao/gruvbox.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
@@ -59,15 +60,16 @@ return {
     priority = 1000,
   },
 
-  {
-    'uhs-robert/oasis.nvim',
-    version = '4.2.0',
-    config = function()
-      require('oasis').setup({
-        style = "lagoon",
-      })
-    end,
-  },
+  -- {
+  --   'uhs-robert/oasis.nvim',
+  --   lazy = false,
+  --   version = '4.2.0',
+  --   config = function()
+  --     require('oasis').setup({
+  --       style = "lagoon",
+  --     })
+  --   end,
+  -- },
 
   {
     "xero/miasma.nvim",
@@ -83,6 +85,7 @@ return {
 
   {
     "catppuccin/nvim",
+    lazy = false,
     name = "catppuccin",
     priority = 1000,
     config = function()
@@ -94,27 +97,23 @@ return {
 
   {
     "DeviusVim/deviuspro.nvim",
-    config = function()
-      require('lualine').setup {
-        options = {
-          theme = 'deviuspro'
-        }
-      }
-    end
+    lazy = false,
   },
 
-  {
-    "Shatur/neovim-ayu",
-    config = function()
-      require('ayu').setup({
-        dark = true,
-        terminal = true,
-      })
-    end
-  },
+  -- {
+  --   "Shatur/neovim-ayu",
+  --   lazy = false,
+  --   config = function()
+  --     require('ayu').setup({
+  --       dark = true,
+  --       terminal = true,
+  --     })
+  --   end
+  -- },
 
   {
     "rose-pine/neovim",
+    lazy = false,
     name = "rose-pine",
     config = function()
       require("rose-pine").setup({
