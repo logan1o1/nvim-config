@@ -18,7 +18,7 @@ vim.o.undodir = vim.fn.stdpath("data") .. "/undodir"
 vim.o.undofile = true
 vim.o.scrolloff = 8
 vim.o.colorcolumn = "110"
-vim.o.guifont = "Iosevka NF:h30"
+vim.o.guifont = "Iosevka NF"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",

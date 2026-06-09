@@ -7,6 +7,7 @@ return {
         "gopls",
         "ruby_lsp",
         "clangd",
+        "zls",
         "rubocop",
         "ts_ls",
         "dockerls",
