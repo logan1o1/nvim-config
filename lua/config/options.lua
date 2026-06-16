@@ -19,10 +19,3 @@ vim.o.undofile = true
 vim.o.scrolloff = 8
 vim.o.colorcolumn = "110"
 vim.o.guifont = "Iosevka NF"
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
