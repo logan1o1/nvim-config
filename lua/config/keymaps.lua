@@ -7,7 +7,7 @@ vim.keymap.set("v", "<Leader>x", ":lua<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
-vim.keymap.set("n", "<C-l>", ":Oil --float<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>l", ":Oil --float<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>r", ":bd!<CR>")
 
 vim.keymap.set("n", "<S-Y>", vim.diagnostic.open_float)

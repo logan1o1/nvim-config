@@ -7,7 +7,7 @@ return {
       vim.opt.termguicolors = true
 
       require("tokyonight").setup({
-        transparent = false,
+        transparent = true,
         styles = {
           sidebars = "transparent",
           floats = "transparent",
@@ -43,7 +43,7 @@ return {
         invert_selection = false,
         invert_signs = false,
         invert_tabline = false,
-        transparent_mode = false,
+        transparent_mode = true,
       })
     end,
   },
@@ -52,6 +52,11 @@ return {
     "ficcdaf/ashen.nvim",
     lazy = false,
     priority = 1000,
+    config = function()
+      require('ashen').setup({
+        transparent = true,
+      })
+    end
   },
 
   {
@@ -59,17 +64,6 @@ return {
     lazy = false,
     priority = 1000,
   },
-
-  -- {
-  --   'uhs-robert/oasis.nvim',
-  --   lazy = false,
-  --   version = '4.2.0',
-  --   config = function()
-  --     require('oasis').setup({
-  --       style = "lagoon",
-  --     })
-  --   end,
-  -- },
 
   {
     "xero/miasma.nvim",
@@ -81,6 +75,14 @@ return {
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
+    config = function()
+      require('nordic').setup({
+        transparent = {
+          bg = true,
+          float = true,
+        },
+      })
+    end
   },
 
   {
@@ -90,6 +92,7 @@ return {
     priority = 1000,
     config = function()
       require("catppuccin").setup({
+        transparent_background = true,
         flavour = "mocha" -- latte, frappe, macchiato, mocha
       })
     end
@@ -100,23 +103,16 @@ return {
     lazy = false,
   },
 
-  -- {
-  --   "Shatur/neovim-ayu",
-  --   lazy = false,
-  --   config = function()
-  --     require('ayu').setup({
-  --       dark = true,
-  --       terminal = true,
-  --     })
-  --   end
-  -- },
-
   {
     "rose-pine/neovim",
     lazy = false,
     name = "rose-pine",
     config = function()
       require("rose-pine").setup({
+        styles = {
+          italic = true,
+          transparency = true,
+        },
         variant = "main"
       })
     end

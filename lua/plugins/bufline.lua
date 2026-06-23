@@ -16,24 +16,17 @@ return {
       { "[B",         "<cmd>BufferLineMovePrev<cr>",             desc = "Move buffer prev" },
       { "]B",         "<cmd>BufferLineMoveNext<cr>",             desc = "Move buffer next" },
     },
+
     config = function()
       vim.opt.termguicolors = true
       local bufferline = require("bufferline")
 
-      local theme_bg = {
-        gruvbox = "#282828",
-        tokyonight = "#222436",
-        neogotham = "#0c1014",
-        dracula = "#282A36",
-        ashen = "#121212",
-        catppuccin = "#1E1E2E",
-        oasis = "#101825",
-        nordic = "#242933",
-        deviuspro = "#15181A",
-        ayu = "#0D0E15",
-        miasma = "#222222",
-        ["rose-pine"] = "#191724",
-      }
+      -- local overrides = {}
+      -- require("bufferline").setup({
+      --   highlights = require("darkrose.integrations.bufferline").generate(overrides),
+      -- })
+
+      local matugen_colors = require("plugins.matugen_colors")
 
       bufferline.setup({
         options = {
@@ -62,15 +55,27 @@ return {
         },
         highlights = {
           fill = {
-            bg = theme_bg[vim.g.theme],
-            -- bg = "#222436", -- tokyonight
-            -- bg = "#282828", -- gruvbox
-            -- bg = "#0c1014", -- neogotham
-            -- bg = "#232A36", -- dracula
-            -- bg = "#121212", -- ashen
+            bg = matugen_colors.on_background[vim.g.theme],
+            -- bg = theme_bg[vim.g.theme],
+            -- bg = matugen_colors.background,
           },
         },
       })
     end,
   },
 }
+
+-- local theme_bg = {
+--   gruvbox = "#13140D",
+--   tokyonight = "#222436",
+--   neogotham = "#0c1014",
+--   dracula = "#282A36",
+--   ashen = "#121212",
+--   catppuccin = "#1E1E2E",
+--   oasis = "#101825",
+--   nordic = "#242933",
+--   deviuspro = "#15181A",
+--   ayu = "#0D0E15",
+--   miasma = "#222222",
+--   ["rose-pine"] = "#191724",
+-- }
