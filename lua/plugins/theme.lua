@@ -23,26 +23,21 @@ return {
   },
 
   {
+    "vimcolorschemes/olive-crt.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  },
+
+  {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
         terminal_colors = true,
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-          strings = true,
-          emphasis = true,
-          comments = true,
-          operators = false,
-          folds = true,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
         transparent_mode = true,
       })
     end,
@@ -60,32 +55,6 @@ return {
   },
 
   {
-    "water-sucks/darkrose.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-
-  {
-    "xero/miasma.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-
-  {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('nordic').setup({
-        transparent = {
-          bg = true,
-          float = true,
-        },
-      })
-    end
-  },
-
-  {
     "catppuccin/nvim",
     lazy = false,
     name = "catppuccin",
@@ -96,11 +65,6 @@ return {
         flavour = "mocha" -- latte, frappe, macchiato, mocha
       })
     end
-  },
-
-  {
-    "DeviusVim/deviuspro.nvim",
-    lazy = false,
   },
 
   {

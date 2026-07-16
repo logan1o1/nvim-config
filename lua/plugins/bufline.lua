@@ -21,11 +21,6 @@ return {
       vim.opt.termguicolors = true
       local bufferline = require("bufferline")
 
-      -- local overrides = {}
-      -- require("bufferline").setup({
-      --   highlights = require("darkrose.integrations.bufferline").generate(overrides),
-      -- })
-
       local matugen_colors = require("plugins.matugen_colors")
 
       bufferline.setup({
@@ -55,9 +50,11 @@ return {
         },
         highlights = {
           fill = {
-            bg = matugen_colors.on_background[vim.g.theme],
-            -- bg = theme_bg[vim.g.theme],
-            -- bg = matugen_colors.background,
+            bg = vim.g.theme == "gruvbox" and "#13140D" or
+                vim.g.theme == "ashen" and "#1A1112" or
+                vim.g.theme == "olive-crt" and "#13140D" or
+                vim.g.theme == "neogotham" and "#0C1014" or
+                matugen_colors.on_background[vim.g.theme],
           },
         },
       })
@@ -65,17 +62,4 @@ return {
   },
 }
 
--- local theme_bg = {
 --   gruvbox = "#13140D",
---   tokyonight = "#222436",
---   neogotham = "#0c1014",
---   dracula = "#282A36",
---   ashen = "#121212",
---   catppuccin = "#1E1E2E",
---   oasis = "#101825",
---   nordic = "#242933",
---   deviuspro = "#15181A",
---   ayu = "#0D0E15",
---   miasma = "#222222",
---   ["rose-pine"] = "#191724",
--- }

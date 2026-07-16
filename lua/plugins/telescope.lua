@@ -8,6 +8,7 @@ return {
       "nvim-telescope/telescope-media-files.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+
     config = function()
       require("telescope").load_extension("media_files")
       local actions = require("telescope.actions")
@@ -39,6 +40,7 @@ return {
           },
         },
       })
+
       vim.keymap.set("n", "fh", builtin.help_tags)
       vim.keymap.set("n", "fl", builtin.live_grep)
       vim.keymap.set("n", "fg", builtin.grep_string)
