@@ -61,5 +61,3 @@ return {
     end,
   },
 }
-
---   gruvbox = "#13140D",

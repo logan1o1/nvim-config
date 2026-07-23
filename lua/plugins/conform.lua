@@ -6,11 +6,11 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        go = { "gopls" },
+        -- go = { "gopls" },
       },
       format_on_save = {
         timeout_ms = 500,
-        lsp_format = "fallback",
+        -- lsp_format = "fallback",
       },
     },
     config = function(_, opts)
@@ -28,9 +28,9 @@ return {
           end
 
           conform.format({
-            bufnr = args.buff,
+            bufnr = args.buf,
             async = true,
-            lsp_fallback = true,
+            lsp_fallback = false,
           })
         end,
       })

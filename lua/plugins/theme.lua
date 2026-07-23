@@ -17,21 +17,6 @@ return {
   },
 
   {
-    "https://gitlab.com/shmerl/neogotham.git",
-    lazy = false,
-    priority = 1000,
-  },
-
-  {
-    "vimcolorschemes/olive-crt.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-    },
-  },
-
-  {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
@@ -41,17 +26,6 @@ return {
         transparent_mode = true,
       })
     end,
-  },
-
-  {
-    "ficcdaf/ashen.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('ashen').setup({
-        transparent = true,
-      })
-    end
   },
 
   {
@@ -81,4 +55,30 @@ return {
       })
     end
   },
+
+  {
+    "https://gitlab.com/shmerl/neogotham.git",
+    lazy = false,
+    priority = 1000,
+  },
+
+  -- {
+  --   "vimcolorschemes/olive-crt.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --   },
+  -- },
+
+  -- {
+  --   "ficcdaf/ashen.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('ashen').setup({
+  --       transparent = true,
+  --     })
+  --   end
+  -- },
 }

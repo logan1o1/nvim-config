@@ -117,7 +117,7 @@ return {
             min_height = 0.10, -- min height of prompt input as percentage of window height
             max_height = 0.25, -- max height of prompt input as percentage of window height
             text = {
-              wrap = false, -- Wraps text inside input window
+              wrap = true, -- Wraps text inside input window
             },
             -- Auto-hide input window when prompt is submitted or focus switches to output window
             auto_hide = false,
@@ -167,7 +167,7 @@ return {
             context_lines = 5, -- Number of lines before and after cursor to include in context
           },
           diagnostics = {
-            info = false, -- Include diagnostics info in the context (default to false
+            info = true, -- Include diagnostics info in the context (default to false
             warn = true, -- Include diagnostics warnings in the context
             error = true, -- Include diagnostics errors in the context
             only_closest = false, -- If true, only diagnostics for cursor/selection

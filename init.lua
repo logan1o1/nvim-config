@@ -5,7 +5,7 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
-vim.g.theme = "gruvbox"
--- olive-crt, rose-pine, tokyonight, gruvbox, neogotham, ashen, catppuccin
+vim.g.theme = "rose-pine"
+--  catppuccin, rose-pine, tokyonight, gruvbox, neogotham, ashen, olive-crt
 
 vim.cmd.colorscheme(vim.g.theme)
