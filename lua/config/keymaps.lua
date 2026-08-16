@@ -12,7 +12,7 @@ vim.keymap.set("n", "<Leader>r", ":bd!<CR>")
 
 vim.keymap.set("n", "<S-Y>", vim.diagnostic.open_float)
 
-vim.keymap.set("n", "<Leader>t", function()
+vim.keymap.set("n", "<Leader>e", function()
   vim.cmd.vnew()
   vim.cmd.term()
   vim.cmd.wincmd("J")

@@ -57,5 +57,5 @@ local toggle_terminal = function()
 end
 
 vim.api.nvim_create_user_command("Floterm", toggle_terminal, {})
-vim.keymap.set({ "n", "t" }, "<C-e>", toggle_terminal)
+vim.keymap.set({ "n", "t" }, "<Leader>t", toggle_terminal)
 return {}
