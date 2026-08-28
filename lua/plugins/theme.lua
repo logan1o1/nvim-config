@@ -36,7 +36,11 @@ return {
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
-        flavour = "mocha" -- latte, frappe, macchiato, mocha
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        float = {
+          transparent = true,
+          solid = false
+        }
       })
     end
   },

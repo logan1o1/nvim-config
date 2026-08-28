@@ -10,9 +10,9 @@ return {
       keymap = {
         preset = "default",
 
-        -- ["<Tab>"] = { "accept", "fallback" },
-        ["<C-k>"] = { "select_prev", "fallback" },
-        ["<C-j>"] = { "select_next", "fallback" },
+        ["<Return>"] = { "accept", "fallback" },
+        ["<M-k>"] = { "select_prev", "fallback" },
+        ["<M-j>"] = { "select_next", "fallback" },
       },
 
       appearance = {

@@ -14,7 +14,6 @@ local lsp_array = {
   "vimls",
   "tailwindcss",
   "tree-sitter-cli",
-  "jsonls",
   "zls",
   "qmlls",
 }

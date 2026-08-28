@@ -21,7 +21,7 @@ return {
       vim.opt.termguicolors = true
       local bufferline = require("bufferline")
 
-      local matugen_colors = require("plugins.matugen_colors")
+      local matugen_colors = require("config.matugen_colors")
 
       bufferline.setup({
         options = {

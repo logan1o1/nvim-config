@@ -16,6 +16,13 @@ return {
 
       require("telescope").setup({
         defaults = {
+          layout_config = {
+            horizontal = {
+              width = 0.95,
+              height = 0.95,
+              preview_width = 0.6,
+            }
+          },
           mappings = {
             i = {
               ["<M-k>"] = actions.move_selection_previous,
@@ -35,19 +42,23 @@ return {
           media_files = {
             -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
             filetypes = { "png", "webp", "jpg", "jpeg" },
-            -- find command (defaults to `fd`)
             find_cmd = "rg",
           },
         },
       })
 
-      vim.keymap.set("n", "fh", builtin.help_tags)
-      vim.keymap.set("n", "fl", builtin.live_grep)
-      vim.keymap.set("n", "fg", builtin.grep_string)
-      vim.keymap.set("n", "fo", builtin.oldfiles)
-      vim.keymap.set("n", "fn", builtin.man_pages)
       vim.keymap.set("n", "ff", builtin.find_files)
+      vim.keymap.set("n", "fo", builtin.oldfiles)
+      vim.keymap.set("n", "fa", builtin.marks)
       require("plugins.telescope.multigrep").setup()
+
+      vim.keymap.set("n", "fc", builtin.git_commits)
+      vim.keymap.set("n", "fb", builtin.git_branches)
+      vim.keymap.set("n", "fs", builtin.git_status)
+      vim.keymap.set("n", "ft", builtin.git_stash)
+
+      vim.keymap.set("n", "fh", builtin.help_tags)
+      vim.keymap.set("n", "fn", builtin.man_pages)
     end,
   },
 }
