@@ -45,7 +45,7 @@ return {
             ["<S-cr>"] = { "submit_input_prompt", mode = { "n", "i" } }, -- Submit prompt (normal mode and insert mode)
             ["<esc>"] = { "close" }, -- Close UI windows
             ["<C-c>"] = { "cancel" }, -- Cancel opencode request while it is running
-            ["~"] = { "mention_file", mode = "i" }, -- Pick a file and add to context. See File Mentions section
+            -- ["~"] = { "mention_file", mode = "i" }, -- Pick a file and add to context. See File Mentions section
             ["@"] = { "mention", mode = "i" }, -- Insert mention (file/agent)
             ["/"] = { "slash_commands", mode = "i" }, -- Pick a command to run in the input window
             ["#"] = { "context_items", mode = "i" }, -- Manage context items (current file, selection, diagnostics, mentioned files)

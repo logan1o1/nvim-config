@@ -62,8 +62,3 @@ return {
     end,
   },
 }
--- vim.keymap.set("n", "fp", function()
---   require("telescope.builtin").find_files({
---     cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
---   })
--- end)
