@@ -23,3 +23,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- vim.api.nvim_create_autocmd("ZigFmtOnSave", {
+--   desc = "Running zig fmt on buffer save",
+-- })
+
