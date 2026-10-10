@@ -101,8 +101,8 @@ return {
         -- Padding around the floating window
         padding = 2,
         -- max_width and max_height can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-        max_width = 30,
-        max_height = 60,
+        max_width = 35,
+        max_height = 90,
         border = "rounded",
         win_options = {
           winblend = 0,
@@ -113,7 +113,7 @@ return {
           conf.anchor = "NE"
           conf.row = 1
           conf.col = vim.o.columns
-          conf.height = vim.o.lines - 2
+          conf.height = vim.o.lines - 1
           return conf
         end,
       },
