@@ -4,11 +4,25 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
+
+      local function custom_theme()
+        local theme_name = vim.g.theme
+        if theme_name == "tokyonight" then
+          local custom_tokyonight = require'lualine.themes.tokyonight'
+          custom_tokyonight.normal.c.bg = '#111318'
+          return custom_tokyonight
+        elseif theme_name == "gruvbox" then
+          local custom_gruvbox = require'lualine.themes.gruvbox'
+          custom_gruvbox.normal.c.bg = '#13140D'
+          return custom_gruvbox
+        end
+        return "auto"
+      end
+
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = "auto",
-          -- theme = vim.g.theme,
+          theme = custom_theme,
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
           disabled_filetypes = {

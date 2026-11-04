@@ -70,24 +70,4 @@ return {
     lazy = true,
     priority = 1000,
   },
-
-  -- {
-  --   "vimcolorschemes/olive-crt.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     transparent = true,
-  --   },
-  -- },
-
-  -- {
-  --   "ficcdaf/ashen.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('ashen').setup({
-  --       transparent = true,
-  --     })
-  --   end
-  -- },
 }

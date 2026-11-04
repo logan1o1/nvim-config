@@ -51,8 +51,6 @@ return {
         highlights = {
           fill = {
             bg = vim.g.theme == "gruvbox" and "#13140D" or
-                vim.g.theme == "ashen" and "#1A1112" or
-                vim.g.theme == "olive-crt" and "#13140D" or
                 vim.g.theme == "neogotham" and "#0C1014" or
                 matugen_colors.on_background[vim.g.theme],
           },

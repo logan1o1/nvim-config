@@ -5,7 +5,7 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
-vim.g.theme = "catppuccin"
+vim.g.theme = "tokyonight"
 --  catppuccin, rose-pine, tokyonight, gruvbox, neogotham, ashen, olive-crt
 
 vim.cmd.colorscheme(vim.g.theme)
