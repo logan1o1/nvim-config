@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/oil.nvim",
-    lazy = false,
+    -- lazy = true,
     event = "VeryLazy",
     ---@module 'oil'
     ---@type oil.SetupOpts
@@ -162,7 +162,5 @@ return {
         border = "rounded",
       },
     },
-    -- Optional dependencies
-    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
   },
 }

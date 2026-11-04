@@ -8,11 +8,6 @@ return {
   },
 
   {
-    "nvim-tree/nvim-web-devicons",
-    lazy = true,
-  },
-
-  {
     "Wansmer/treesj",
     event = "VeryLazy",
     keys = {

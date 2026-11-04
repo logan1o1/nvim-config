@@ -2,7 +2,7 @@ return {
   {
     "nvim-tree/nvim-web-devicons",
     event = "VeryLazy",
-    lazy = false,
+    -- lazy = true,
     config = function()
       require("nvim-web-devicons").setup { default = true }
     end,
@@ -10,7 +10,7 @@ return {
   {
     "echasnovski/mini.icons",
     event = "VeryLazy",
-    lazy = false,
+    -- lazy = true,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       file = {

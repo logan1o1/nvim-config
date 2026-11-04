@@ -1,8 +1,8 @@
 return {
   {
     "folke/tokyonight.nvim",
-    event = "VeryLazy",
-    lazy = false,
+    -- event = "VeryLazy",
+    lazy = true,
     priority = 1000,
     config = function()
       vim.opt.termguicolors = true
@@ -19,8 +19,8 @@ return {
 
   {
     "ellisonleao/gruvbox.nvim",
-    event = "VeryLazy",
-    lazy = false,
+    -- event = "VeryLazy",
+    lazy = true,
     priority = 1000,
     config = function()
       require("gruvbox").setup({
@@ -50,8 +50,8 @@ return {
 
   {
     "rose-pine/neovim",
-    event = "VeryLazy",
-    lazy = false,
+    -- event = "VeryLazy",
+    lazy = true,
     name = "rose-pine",
     config = function()
       require("rose-pine").setup({
@@ -66,8 +66,8 @@ return {
 
   {
     "https://gitlab.com/shmerl/neogotham.git",
-    event = "VeryLazy",
-    lazy = false,
+    -- event = "VeryLazy",
+    lazy = true,
     priority = 1000,
   },
 
