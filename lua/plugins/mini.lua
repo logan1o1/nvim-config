@@ -1,6 +1,7 @@
 return {
   {
     "echasnovski/mini.nvim",
+    event = "VeryLazy",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },

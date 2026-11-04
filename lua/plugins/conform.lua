@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    event = { "BufWritePre", "FocusLost", "InsertLeave" },
+    event = { "BufWritePre", "FocusLost", "InsertLeave", "VeryLazy" },
     cmd = { "ConformInfo" },
     opts = {
       formatters_by_ft = {

@@ -7,10 +7,14 @@ return {
     end,
   },
 
-  { "nvim-tree/nvim-web-devicons", lazy = true },
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = true,
+  },
 
   {
     "Wansmer/treesj",
+    event = "VeryLazy",
     keys = {
       { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },

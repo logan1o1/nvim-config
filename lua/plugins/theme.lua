@@ -1,6 +1,7 @@
 return {
   {
     "folke/tokyonight.nvim",
+    event = "VeryLazy",
     lazy = false,
     priority = 1000,
     config = function()
@@ -18,6 +19,7 @@ return {
 
   {
     "ellisonleao/gruvbox.nvim",
+    event = "VeryLazy",
     lazy = false,
     priority = 1000,
     config = function()
@@ -30,6 +32,7 @@ return {
 
   {
     "catppuccin/nvim",
+    event = "VeryLazy",
     lazy = false,
     name = "catppuccin",
     priority = 1000,
@@ -47,6 +50,7 @@ return {
 
   {
     "rose-pine/neovim",
+    event = "VeryLazy",
     lazy = false,
     name = "rose-pine",
     config = function()
@@ -62,6 +66,7 @@ return {
 
   {
     "https://gitlab.com/shmerl/neogotham.git",
+    event = "VeryLazy",
     lazy = false,
     priority = 1000,
   },
