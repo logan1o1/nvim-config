@@ -1,7 +1,15 @@
 return {
   {
     "mason-org/mason-lspconfig.nvim",
-    event = "VeryLazy",
+    lazy = true,
+    cmd = {
+      "Mason",
+      "MasonInstall",
+      "MasonUninstall",
+      "MasonUninstallAll",
+      "MasonUpdate",
+      "MasonLog"
+    },
     opts = {
       ensure_installed = {
         "lua_ls",

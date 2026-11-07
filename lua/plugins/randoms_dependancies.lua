@@ -9,7 +9,7 @@ return {
 
   {
     "Wansmer/treesj",
-    event = "VeryLazy",
+    lazy = true,
     keys = {
       { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },

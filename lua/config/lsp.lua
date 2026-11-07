@@ -13,7 +13,6 @@ local lsp_array = {
   "bashls",
   "vimls",
   "tailwindcss",
-  "tree-sitter-cli",
   "zls",
   "qmlls",
 }

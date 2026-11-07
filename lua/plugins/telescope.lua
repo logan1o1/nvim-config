@@ -1,8 +1,11 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    -- lazy = true,
-    event = "VeryLazy",
+    lazy = true,
+    -- event = "VeryLazy",
+    cmd = {
+      "Tel"
+    },
     tag = "0.1.8",
     dependencies = {
       "nvim-lua/popup.nvim",

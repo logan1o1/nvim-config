@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.api.nvim_set_hl(0, "StatusLineNC", { link = "Normal" })
   end,
 })
+
 -- vim.api.nvim_create_autocmd("ZigFmtOnSave", {
 --   desc = "Running zig fmt on buffer save",
 -- })

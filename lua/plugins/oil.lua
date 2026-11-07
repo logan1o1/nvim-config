@@ -1,8 +1,11 @@
 return {
   {
     "stevearc/oil.nvim",
-    -- lazy = true,
-    event = "VeryLazy",
+    lazy = true,
+    -- event = "VeryLazy",
+    cmd = {
+      "Oil"
+    },
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
